@@ -38,4 +38,20 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+/**
+ * struct arg_s - Structure for handling common variables.
+ * @stream: Pointer to the FILE stream
+ * @line: Pointer to the line data
+ *
+ * Description: This structure is used for handling common variables
+ * used across the whole program.
+ */
+typedef struct arg_s
+{
+	FILE *stream;
+	char *line;
+} arg_t;
+
+extern arg_t *arguments;
+
 #endif /* MONTY_H */
