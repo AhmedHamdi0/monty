@@ -54,4 +54,9 @@ typedef struct arg_s
 
 extern arg_t *arguments;
 
+void validate_arguments(int argc);
+void initialize_arguments(void);
+void malloc_failed(void);
+void get_stream(char *filename);
+
 #endif /* MONTY_H */
