@@ -13,6 +13,12 @@ void initialize_arguments(void)
 	if (arguments == NULL)
 		malloc_failed();
 
+	arguments->instruction = malloc(sizeof(instruction_t));
+	if (arguments->instruction == NULL)
+		malloc_failed();
+
 	arguments->stream = NULL;
 	arguments->line = NULL;
+	arguments->line_number = 0;
+	arguments->n_tokens = 0;
 }
