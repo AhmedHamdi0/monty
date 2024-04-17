@@ -50,6 +50,10 @@ typedef struct arg_s
 {
 	FILE *stream;
 	char *line;
+	unsigned int line_number;
+	int n_tokens;
+	char **tokens;
+	instruction_t *instruction;
 } arg_t;
 
 extern arg_t *arguments;
