@@ -18,7 +18,10 @@ void initialize_arguments(void)
 		malloc_failed();
 
 	arguments->stream = NULL;
+	arguments->head = NULL;
 	arguments->line = NULL;
-	arguments->line_number = 0;
 	arguments->n_tokens = 0;
+	arguments->line_number = 0;
+	arguments->stack_length = 0;
+	arguments->stack = 1;
 }
