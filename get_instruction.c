@@ -37,6 +37,13 @@ void get_instruction(void)
 	if (arguments->n_tokens == 0)
 		return;
 
+	if (arguments->tokens[0][0] == '#')
+	{
+		arguments->instruction->opcode = "nop";
+		arguments->instruction->f = nop;
+		return;
+	}
+
 	for (; instructions[i].opcode != NULL; i++)
 	{
 		if (strcmp(instructions[i].opcode, arguments->tokens[0]) == 0)
