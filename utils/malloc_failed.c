@@ -1,4 +1,4 @@
-#include "monty.h"
+#include "../monty.h"
 
 /**
  * malloc_failed - Handles the case of failed memory allocation
