@@ -54,6 +54,9 @@ typedef struct arg_s
 	int n_tokens;
 	char **tokens;
 	instruction_t *instruction;
+	stack_t *head;
+	int stack_length;
+	int stack;
 } arg_t;
 
 extern arg_t *arguments;
@@ -79,14 +82,16 @@ void queue(stack_t **stack, unsigned int line_number);
 void validate_arguments(int argc);
 void initialize_arguments(void);
 void malloc_failed(void);
-void get_stream(char *filename);
+void get_stream(char *fileName);
 void tokenize_line(void);
 void get_instruction(void);
 void run_instruction(void);
 void free_tokens(void);
 void close_stream(void);
+void free_arguments(void);
+void free_stack(stack_t *head);
+void free_head(void);
+void free_all_args(void);
 
-//void free_arguments(void);
-//void free_stack(stack_t *head);
 
 #endif /* MONTY_H */
