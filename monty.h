@@ -7,6 +7,10 @@
 #include <stddef.h>
 #include <fcntl.h>
 #include <unistd.h>
+#include <sys/types.h>
+#include <ctype.h>
+
+#define MAX_LINE_LENGTH 1024
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
