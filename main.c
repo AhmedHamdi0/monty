@@ -25,7 +25,6 @@ int main(int argc, char *argv[])
 		get_instruction();
 		run_instruction();
 		free_tokens();
-		printf("L%d: %s", arguments->line_number, arguments->line);
 	}
 
 	close_stream();
