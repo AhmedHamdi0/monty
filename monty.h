@@ -62,5 +62,11 @@ void validate_arguments(int argc);
 void initialize_arguments(void);
 void malloc_failed(void);
 void get_stream(char *filename);
+void tokenize_line(void);
+void get_instruction(void);
+void run_instruction(void);
+void free_tokens(void);
+void close_stream(void);
+
 
 #endif /* MONTY_H */
