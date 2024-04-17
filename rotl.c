@@ -8,13 +8,13 @@
  */
 void rotl(stack_t **stack, unsigned int line_number)
 {
+	stack_t *temp1, *temp2;
+
 	(void) stack;
 	(void) line_number;
 
 	if (arguments->stack_length < 2)
 		return;
-
-	stack_t *temp1, *temp2;
 
 	temp1 = arguments->head;
 	temp2 = temp1->next;

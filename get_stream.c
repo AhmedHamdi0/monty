@@ -9,7 +9,7 @@
  */
 void getting_stream_failed(char *filename)
 {
-	dprintf(2, "Error: can't open file %s\n", filename);
+	fprintf(stderr, "Error: can't open file %s\n", filename);
 	free_arguments();
 	exit(EXIT_FAILURE);
 }
@@ -29,7 +29,7 @@ void get_stream(char *filename)
 	if (file_descriptor == -1)
 		getting_stream_failed(filename);
 
-	arguments->stream = fdopen(file_descriptor, "r");
+	arguments->stream = fopen(filename, "r");
 	if (arguments->stream == NULL)
 	{
 		close(file_descriptor);

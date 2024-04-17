@@ -8,11 +8,12 @@
 void swap(stack_t **stack, unsigned int line_number)
 {
 	stack_t *temp1, *temp2;
+
 	(void) stack;
 
 	if (arguments->stack_length < 2)
 	{
-		dprintf(2, "L%d: can't swap, stack too short\n", line_number);
+		fprintf(stderr, "L%d: can't swap, stack too short\n", line_number);
 		free_all_args();
 		exit(EXIT_FAILURE);
 	}

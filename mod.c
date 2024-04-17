@@ -7,12 +7,13 @@
  */
 void mod(stack_t **stack, unsigned int line_number)
 {
-	(void) stack;
 	stack_t *temp1, *temp2;
+
+	(void) stack;
 
 	if (arguments->stack_length < 2)
 	{
-		dprintf(2, "L%d: can't div, stack too short\n", line_number);
+		fprintf(stderr, "L%d: can't div, stack too short\n", line_number);
 		free_all_args();
 		exit(EXIT_FAILURE);
 	}
@@ -22,7 +23,7 @@ void mod(stack_t **stack, unsigned int line_number)
 
 	if (temp1->n == 0)
 	{
-		dprintf(2, "L%d: division by zero\n", line_number);
+		fprintf(stderr, "L%d: division by zero\n", line_number);
 		free_all_args();
 		exit(EXIT_FAILURE);
 	}

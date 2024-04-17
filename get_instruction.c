@@ -9,7 +9,7 @@
  */
 void invalid_instruction(void)
 {
-	dprintf(2, "L%d: unknown instruction %s\n",
+	fprintf(stderr, "L%d: unknown instruction %s\n",
 			arguments->line_number, arguments->tokens[0]);
 	free_all_args();
 	exit(EXIT_FAILURE);

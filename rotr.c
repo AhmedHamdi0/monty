@@ -8,13 +8,15 @@
  */
 void rotr(stack_t **stack, unsigned int line_number)
 {
+	stack_t *last;
+
 	(void) stack;
 	(void) line_number;
 
 	if (arguments->stack_length < 2)
 		return;
 
-	stack_t *last = arguments->head;
+	last = arguments->head;
 
 	while (last)
 	{

@@ -8,20 +8,22 @@
  */
 void pchar(stack_t **stack, unsigned int line_number)
 {
+	stack_t *temp;
+
 	(void) stack;
 
 	if (arguments->head == NULL)
 	{
-		dprintf(2, "L%d: can't pchar, stack empty\n", line_number);
+		fprintf(stderr, "L%d: can't pchar, stack empty\n", line_number);
 		free_all_args();
 		exit(EXIT_FAILURE);
 	}
 
-	stack_t *temp = arguments->head;
+	temp = arguments->head;
 
 	if (temp->n < 0 || temp->n > 127)
 	{
-		dprintf(2, "L%d: can't pchar, value out of range\n", line_number);
+		fprintf(stderr, "L%d: can't pchar, value out of range\n", line_number);
 		free_all_args();
 		exit(EXIT_FAILURE);
 	}
