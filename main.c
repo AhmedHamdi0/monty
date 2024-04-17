@@ -12,15 +12,23 @@ arg_t *arguments = NULL;
 
 int main(int argc, char *argv[])
 {
-	size_t n = 0;
+	char buffer[MAX_LINE_LENGTH];
 
 	validate_arguments(argc);
 	initialize_arguments();
 	get_stream(argv[1]);
 
-	while (getline(&arguments->line, &n, arguments->stream) != -1)
+	arguments->line = malloc(MAX_LINE_LENGTH * sizeof(char));
+	if (arguments->line == NULL)
+	{
+		fprintf(stderr, "Error: Failed to allocate memory\n");
+		exit(EXIT_FAILURE);
+	}
+
+	while (fgets(buffer, MAX_LINE_LENGTH, arguments->stream) != NULL)
 	{
 		arguments->line_number += 1;
+		strncpy(arguments->line, buffer, MAX_LINE_LENGTH);
 		tokenize_line();
 		get_instruction();
 		run_instruction();
