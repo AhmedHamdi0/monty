@@ -1,4 +1,4 @@
-#include "../monty.h"
+#include "monty.h"
 
 /**
  * close_stream - Closes the file stream.

@@ -1,4 +1,4 @@
-#include "../monty.h"
+#include "monty.h"
 
 /**
  * stack - Sets the mode of the program to stack (LIFO)

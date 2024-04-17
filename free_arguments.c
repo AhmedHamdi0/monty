@@ -1,4 +1,4 @@
-#include "../monty.h"
+#include "monty.h"
 
 /**
  * free_arguments - Frees memory allocated for arguments

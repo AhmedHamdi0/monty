@@ -1,4 +1,4 @@
-#include "../monty.h"
+#include "monty.h"
 
 /**
  * mod -  Computes modulus of the top two elements of the stack

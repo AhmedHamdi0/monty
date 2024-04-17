@@ -1,4 +1,4 @@
-#include "../monty.h"
+#include "monty.h"
 
 /**
  * tokenize_line - Tokenizes the input line into individual tokens.

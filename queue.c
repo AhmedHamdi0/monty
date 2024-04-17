@@ -1,4 +1,4 @@
-#include "../monty.h"
+#include "monty.h"
 
 /**
  * queue - Sets the mode of the program to queue (FIFO)

@@ -1,4 +1,4 @@
-#include "../monty.h"
+#include "monty.h"
 
 /**
  * getting_stream_failed - Handles the case of failed file opening

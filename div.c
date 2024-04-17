@@ -1,18 +1,18 @@
-#include "../monty.h"
+#include "monty.h"
 
 /**
- * sub - Subtracts the top two elements of the stack
+ * _div - Divides the top two elements of the stack
  * @stack: Pointer to the top of the stack
  * @line_number: Line number being executed
  */
-void sub(stack_t **stack, unsigned int line_number)
+void _div(stack_t **stack, unsigned int line_number)
 {
 	(void) stack;
 	stack_t *temp1, *temp2;
 
 	if (arguments->stack_length < 2)
 	{
-		dprintf(2, "L%d: can't sub, stack too short\n", line_number);
+		dprintf(2, "L%d: can't div, stack too short\n", line_number);
 		free_all_args();
 		exit(EXIT_FAILURE);
 	}
@@ -20,7 +20,14 @@ void sub(stack_t **stack, unsigned int line_number)
 	temp1 = arguments->head;
 	temp2 = temp1->next;
 
-	temp2->n = temp2->n - temp1->n;
+	if (temp1->n == 0)
+	{
+		dprintf(2, "L%d: division by zero\n", line_number);
+		free_all_args();
+		exit(EXIT_FAILURE);
+	}
+
+	temp2->n = temp2->n / temp1->n;
 	arguments->head = arguments->head->next;
 	arguments->stack_length -= 1;
 }
