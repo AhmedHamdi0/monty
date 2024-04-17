@@ -21,7 +21,8 @@ int main(int argc, char *argv[])
 	arguments->line = malloc(MAX_LINE_LENGTH * sizeof(char));
 	if (arguments->line == NULL)
 	{
-		fprintf(stderr, "Error: Failed to allocate memory\n");
+		malloc_failed();
+		free_all_args();
 		exit(EXIT_FAILURE);
 	}
 
