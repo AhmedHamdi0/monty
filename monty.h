@@ -42,6 +42,13 @@ typedef struct instruction_s
  * struct arg_s - Structure for handling common variables.
  * @stream: Pointer to the FILE stream
  * @line: Pointer to the line data
+ * @line_number: Line number for the current instruction
+ * @n_tokens: Number of tokens parsed from the input line
+ * @tokens: Array of tokens parsed from the input line
+ * @instruction: Pointer to the current instruction
+ * @head: Pointer to the head of the stack
+ * @stack_length: Number of elements in the stack
+ * @stack: Flag indicating whether the program is using a stack or queue
  *
  * Description: This structure is used for handling common variables
  * used across the whole program.
@@ -61,6 +68,7 @@ typedef struct arg_s
 
 extern arg_t *arguments;
 
+/* opcodes */
 void push(stack_t **stack, unsigned int line_number);
 void pop(stack_t **stack, unsigned int line_number);
 void pint(stack_t **stack, unsigned int line_number);
@@ -79,19 +87,26 @@ void rotr(stack_t **stack, unsigned int line_number);
 void stack(stack_t **stack, unsigned int line_number);
 void queue(stack_t **stack, unsigned int line_number);
 
+/* utils */
 void validate_arguments(int argc);
 void initialize_arguments(void);
 void malloc_failed(void);
+int is_number(char *str);
+
+/* parser */
 void get_stream(char *fileName);
 void tokenize_line(void);
-void get_instruction(void);
-void run_instruction(void);
-void free_tokens(void);
 void close_stream(void);
+
+/* de-allocators */
+void free_tokens(void);
 void free_arguments(void);
 void free_stack(stack_t *head);
 void free_head(void);
 void free_all_args(void);
 
+/* main */
+void get_instruction(void);
+void run_instruction(void);
 
 #endif /* MONTY_H */
