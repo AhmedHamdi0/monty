@@ -1,4 +1,4 @@
-#include "monty.h"
+#include "../monty.h"
 
 /**
  * free_tokens - Frees memory allocated for tokens.
